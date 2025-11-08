@@ -36,8 +36,6 @@ jobs:
 
           netsh advfirewall firewall delete rule name="RDP-Tailscale"
 
-         
-
           # For testing, allow any incoming connection on port 3389
 
           netsh advfirewall firewall add rule name="RDP-Tailscale" `
