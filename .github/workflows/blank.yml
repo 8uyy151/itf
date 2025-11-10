@@ -30,7 +30,7 @@ jobs:
 
       - name: Create RDP User with Secure Password
         run: |
-          New-LocalUser -Name "Ilyass" -Password 5fd82078 -AccountNeverExpires
+          New-LocalUser -Name "Ilyass" -Password (ConvertTo-SecureString -AsPlainText "P@ssw0rd!" -Force) -AccountNeverExpires
           Add-LocalGroupMember -Group "Administrators" -Member "Ilyass"
           Add-LocalGroupMember -Group "Remote Desktop Users" -Member "Ilyass"
           
