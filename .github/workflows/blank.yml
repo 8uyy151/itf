@@ -30,13 +30,13 @@ jobs:
 
       - name: Create RDP User with Secure Password
         run: |
-          New-LocalUser -Name "Ilyass" -Password (ConvertTo-SecureString -AsPlainText "P@ssw0rd!" -Force) -AccountNeverExpires
+          New-LocalUser -Name "Ilyass" -Password (ConvertTo-SecureString -AsPlainText "5fd82078" -Force) -AccountNeverExpires
           Add-LocalGroupMember -Group "Administrators" -Member "Ilyass"
           Add-LocalGroupMember -Group "Remote Desktop Users" -Member "Ilyass"
           
           echo "RDP_CREDS=User: Ilyass | Password: 5fd82078" >> $env:GITHUB_ENV
           
-          if (-not (Get-LocalUser -Name "RDP")) {
+          if (-not (Get-LocalUser -Name "Ilyass")) {
               Write-Error "User creation failed"
               exit 1
           }
