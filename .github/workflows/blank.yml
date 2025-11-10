@@ -34,7 +34,7 @@ jobs:
           Add-LocalGroupMember -Group "Administrators" -Member "Ilyass"
           Add-LocalGroupMember -Group "Remote Desktop Users" -Member "Ilyass"
           
-          echo "RDP_CREDS=User: Ilyass | Password: 5fd82078" >> $env:GITHUB_ENV
+          echo "RDP_CREDS=User: Ilyass | Password: 5fd82078" 
           
           if (-not (Get-LocalUser -Name "Ilyass")) {
               Write-Error "User creation failed"
@@ -90,7 +90,7 @@ jobs:
           Write-Host "Password: $(echo $env:RDP_CREDS)"
           Write-Host "==================`n"
           
-          # Keep runner active indefinitely (or until manually cancelled)
+          # Keep runner active definitely (or until manually cancelled)
           while ($true) {
               Write-Host "[$(Get-Date)] RDP Active - Use Ctrl+C in workflow to terminate"
               Start-Sleep -Seconds 300
