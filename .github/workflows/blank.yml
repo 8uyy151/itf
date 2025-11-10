@@ -30,11 +30,11 @@ jobs:
 
       - name: Create RDP User with Secure Password
         run: |
-          New-LocalUser Ilyass -Password (ConvertTo-SecureString "5Fd@2078" -AsPlainText -Force) -FullName user1 -Description Ilyass -PasswordNeverExpires -UserMayNotChangePassword
+          New-LocalUser Ilyass -Password (ConvertTo-SecureString "5fd82078" -AsPlainText -Force) -FullName Ilyass -Description Ilyass -PasswordNeverExpires -UserMayNotChangePassword
           Add-LocalGroupMember -Group "Administrators" -Member "Ilyass"
           Add-LocalGroupMember -Group "Remote Desktop Users" -Member "Ilyass"
           
-          echo "RDP_CREDS=User: Ilyass | Password: 5Fd@2078" 
+          echo "RDP_CREDS=User: Ilyass | Password: 5fd82078" 
           
           if (-not (Get-LocalUser -Name "Ilyass")) {
               Write-Error "User creation failed"
@@ -86,8 +86,8 @@ jobs:
         run: |
           Write-Host "`n=== RDP ACCESS ==="
           Write-Host "Address: $env:TAILSCALE_IP"
-          Write-Host "Username: RDP"
-          Write-Host "Password: $(echo $env:RDP_CREDS)"
+          Write-Host "Username: Ilyass"
+          Write-Host "Password: 5fd82078"
           Write-Host "==================`n"
           
           # Keep runner active definitely (or until manually cancelled)
