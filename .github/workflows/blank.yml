@@ -5,7 +5,8 @@ on:
 
 jobs:
   secure-rdp:
-    runs-on: windows-latest
+    runs-on: "self-hosted"
+  
 
     steps:
       - name: Configure Core RDP Settings
