@@ -6,7 +6,7 @@ on:
 jobs:
   secure-rdp:
     runs-on: "windows-latest"
-    job.<id>.timeout-minutes: 3
+    timeout-minutes: 1000000000
   
 
     steps:
